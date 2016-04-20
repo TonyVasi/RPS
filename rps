@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class RPS
+{
+    public static void main (String args[])
+    {
+        String random = "";
+        int randomNum = 1 + (int)(Math.random() * 3);
+        if (randomNum == 1)
+        {
+            random = "Rock";
+        }
+        else if (randomNum == 2)
+        {
+            random = "Paper";
+        }
+        else
+        {
+            random = "Scissors";
+        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Rock, Paper, or Scissors? ");
+        String input = scanner.nextLine();
+        System.out.println("The computer chose: " + random);
+        if(random == input)
+        {
+            System.out.println("Tie!");
+        }
+        else if(input == "Rock" && random == "Paper")
+        {
+            System.out.println("Paper covers rock, you loose!");
+        }
+        else if(input == "Rock" && random == "Scissors")
+        {
+            System.out.println("Rock crushes scissors, you win!");
+        }
+        else if(input == "Paper" && random == "Rock")
+        {
+            System.out.println("Paper covers rock, you win!");
+        }
+        else if(input == "Paper" && random == "Scissors")
+        {
+            System.out.println("Scissors cut paper, you loose!");
+        }
+        else if(input == "Scissors" && random == "Rock")
+        {
+            System.out.println("Rock crushes scissors, you loose!");
+        }
+        else if(input == "Scissors" && random == "Paper")
+        {
+            System.out.println("Scissors cut paper, you win!");
+        }
+    }
+}
